@@ -21,6 +21,7 @@ export default function App() {
         <Profile
           avatar={avatar}
           name="Lise Fliess"
+          className={theme === "dark" ? "h-32 w-32" : undefined}
         />
 
         <div className="self-center">
