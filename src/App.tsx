@@ -1,5 +1,5 @@
-import avatarLight from "./assets/avatar-light.png";
-import avatarDark from "./assets/avatar-dark.png";
+import avatarLight from "./assets/minha foto modo claro.png";
+import avatarDark from "./assets/minha foto modo escuro.png";
 import { Profile } from "./components/features/Profile";
 import { LinkButton } from "./components/features/LinkButton";
 import { SocialLinks } from "./components/features/SocialLinks";
