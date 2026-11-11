@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/*
+  Design tokens do DevLinks — Style Guide do Figma (node 1437-350).
+  Light Mode é o padrão; Dark Mode é aplicado via [data-theme='dark'].
+*/
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+
+  /* Light Mode */
+  --text-color: #000000;
+  --stroke-color: rgb(0 0 0 / 50%);
+  --surface-color: rgb(0 0 0 / 5%);
+  --surface-color-hover: rgb(0 0 0 / 2%);
+  --highlight-color: rgb(0 0 0 / 10%);
+}
+
+[data-theme='dark'] {
+  /* Dark Mode */
+  --text-color: #ffffff;
+  --stroke-color: rgb(255 255 255 / 50%);
+  --surface-color: rgb(255 255 255 / 10%);
+  --surface-color-hover: rgb(255 255 255 / 5%);
+  --highlight-color: rgb(255 255 255 / 20%);
+}
+
+body {
+  margin: 0;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Backgrounds por tema e breakpoint (assets em src/assets/). */
+.app-bg {
+  background-image: url("./assets/bg-mobile-light.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (min-width: 768px) {
+  .app-bg {
+    background-image: url("./assets/bg-desktop-light.png");
+  }
+}
+
+[data-theme='dark'] .app-bg {
+  background-image: url("./assets/bg-mobile.png");
+}
+
+@media (min-width: 768px) {
+  [data-theme='dark'] .app-bg {
+    background-image: url("./assets/bg-desktop.png");
+  }
+}
+
+/* Respeita usuários com movimento reduzido. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
