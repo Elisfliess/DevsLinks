@@ -1,4 +1,5 @@
-import minhafoto from "./assets/minhafoto.png";
+import avatarLight from "./assets/avatar-light.png";
+import avatarDark from "./assets/avatar-dark.png";
 import { Profile } from "./components/features/Profile";
 import { LinkButton } from "./components/features/LinkButton";
 import { SocialLinks } from "./components/features/SocialLinks";
@@ -11,11 +12,14 @@ export default function App() {
   // Tema claro/escuro: estado, data-theme no <html> e localStorage.
   const { theme, toggleTheme } = useTheme();
 
+  // Escolhe o avatar conforme o tema ativo (claro ou escuro).
+  const avatar = theme === "dark" ? avatarDark : avatarLight;
+
   return (
     <div className="app-bg flex min-h-screen flex-col items-center px-4 py-8">
       <div className="flex w-full max-w-md flex-col items-center gap-6">
         <Profile
-          avatar={minhafoto}
+          avatar={avatar}
           name="Lise Fliess"
         />
 
